@@ -47,12 +47,6 @@ Tiện ích mở rộng Chrome mạnh mẽ để tải xuống hình ảnh từ 
 3. **Click để tải**: Click vào nút để tải xuống hình ảnh với độ phân giải cao nhất
 4. **Phím tắt**: Sử dụng `Ctrl+Shift+D` để tải tất cả hình ảnh đang hiển thị
 
-### 📸 Demo
-
-```
-Instagram Post → [🔽] ← Nút Download
-```
-
 ## 📁 Cấu trúc dự án
 
 ```

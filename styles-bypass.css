@@ -1,0 +1,73 @@
+/* Bypass Download Button Styles */
+.ig-bypass-download-btn {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  background: rgba(255, 69, 0, 0.9) !important; /* Orange red for bypass */
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1003 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+.ig-bypass-download-btn:hover {
+  background: rgba(255, 0, 0, 1) !important;
+  transform: scale(1.15) !important;
+  box-shadow: 0 6px 18px rgba(255, 69, 0, 0.5) !important;
+}
+
+.ig-bypass-download-btn:active {
+  transform: scale(0.9) !important;
+}
+
+.ig-bypass-download-btn:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+  transform: none !important;
+}
+
+/* Animation cho notification */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Modal overlay styles */
+.ig-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 10000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ig-modal-content {
+  background: white !important;
+  padding: 30px !important;
+  border-radius: 15px !important;
+  max-width: 500px !important;
+  text-align: center !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}

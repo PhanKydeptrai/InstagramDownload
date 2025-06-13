@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Ultimate Downloader",
+  "version": "3.1",
+  "description": "Ultimate solution - All bypass methods to download Instagram images",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.instagram.com/*",
+    "*://*.cdninstagram.com/*",
+    "*://*.fbcdn.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["content-ultimate.js"],
+      "css": ["styles-bypass.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

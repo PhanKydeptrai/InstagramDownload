@@ -172,8 +172,6 @@ Extension này chỉ dành cho mục đích giáo dục và sử dụng cá nhâ
 
 ---
 
-Made with ❤️ by [Your Name]
-- 🚫 **Zero complex permissions** - chỉ cần activeTab
 
 ## 🚀 Cài đặt
 

@@ -126,23 +126,6 @@ Extension sử dụng 4 phương pháp bypass khác nhau để đảm bảo tả
 - ✅ **Open source**: Code hoàn toàn mở để kiểm tra
 - ✅ **Local processing**: Tất cả xử lý diễn ra trên máy người dùng
 
-## 📋 Yêu cầu hệ thống
-
-- **Browser**: Google Chrome 88+ hoặc Chromium-based browsers
-- **OS**: Windows, macOS, Linux
-- **RAM**: Tối thiểu 2GB
-- **Network**: Kết nối internet ổn định
-
-## 🤝 Đóng góp
-
-Chúng tôi hoan nghênh mọi đóng góp! Vui lòng:
-
-1. Fork repository
-2. Tạo feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Mở Pull Request
-
 ## 📝 Changelog
 
 ### v3.1 (Current)
@@ -156,12 +139,6 @@ Chúng tôi hoan nghênh mọi đóng góp! Vui lòng:
 - ✅ Thêm multiple bypass methods
 - ✅ Cải thiện error handling
 
-## 📞 Hỗ trợ
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/instagram-ultimate-downloader/issues)
-- **Email**: your.email@example.com
-- **Documentation**: Xem file `INSTALL.md` để hướng dẫn chi tiết
-
 ## 📄 License
 
 MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết.
@@ -172,8 +149,6 @@ Extension này chỉ dành cho mục đích giáo dục và sử dụng cá nhâ
 
 ---
 
-Made with ❤️ by [Your Name]
-- 🚫 **Zero complex permissions** - chỉ cần activeTab
 
 ## 🚀 Cài đặt
 

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Instagram Ultimate Downloader",
-  "version": "3.1",
-  "description": "Ultimate solution - All bypass methods to download Instagram images",
+  "version": "3.4",
+  "description": "Ultimate solution - All bypass methods to download Instagram images and videos with high quality",
   "permissions": [
     "activeTab"
   ],

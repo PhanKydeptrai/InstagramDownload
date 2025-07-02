@@ -1,40 +1,201 @@
-/* Bypass Download Button Styles */
-.ig-bypass-download-btn {
-  position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
-  background: rgba(255, 69, 0, 0.9) !important; /* Orange red for bypass */
-  color: white !important;
-  border: none !important;
-  border-radius: 50% !important;
-  width: 50px !important;
-  height: 50px !important;
-  cursor: pointer !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  z-index: 1003 !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  backdrop-filter: blur(10px) !important;
-  font-size: 18px !important;
-  font-weight: bold !important;
+/* Instagram Downloader CSS */
+
+/* Download button styles */
+.ig-dl-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.ig-bypass-download-btn:hover {
-  background: rgba(255, 0, 0, 1) !important;
-  transform: scale(1.15) !important;
-  box-shadow: 0 6px 18px rgba(255, 69, 0, 0.5) !important;
+.ig-dl-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
 }
 
-.ig-bypass-download-btn:active {
-  transform: scale(0.9) !important;
+.ig-dl-btn:active {
+  transform: scale(0.95);
 }
 
-.ig-bypass-download-btn:disabled {
-  cursor: not-allowed !important;
-  opacity: 0.6 !important;
-  transform: none !important;
+/* Video bypass button */
+.ig-video-bypass-btn {
+  background: rgba(225, 48, 108, 0.8) !important; /* Instagram pink */
+}
+
+.ig-video-bypass-btn:hover {
+  background: rgba(225, 48, 108, 1) !important;
+}
+
+/* Global bypass button */
+.ig-global-bypass-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(225, 48, 108, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.ig-global-bypass-btn:hover {
+  transform: scale(1.1);
+  background: rgba(225, 48, 108, 1);
+}
+
+/* Toast notification */
+.ig-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 10000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+}
+
+.ig-toast.success {
+  background: rgba(46, 204, 113, 0.9);
+}
+
+.ig-toast.error {
+  background: rgba(231, 76, 60, 0.9);
+}
+
+.ig-toast.info {
+  background: rgba(52, 152, 219, 0.9);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translate(-50%, 0); }
+  to { opacity: 0; transform: translate(-50%, 20px); }
+}
+
+/* Modal overlay */
+.ig-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s;
+}
+
+.ig-modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.3s;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Advanced download options */
+.ig-download-option {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ig-download-option:hover {
+  background: #e0e0e0;
+}
+
+.ig-download-option strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ig-download-info {
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+/* Button styles */
+.ig-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+}
+
+.ig-btn-primary {
+  background: #28a745;
+  color: white;
+}
+
+.ig-btn-primary:hover {
+  background: #218838;
+}
+
+.ig-btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.ig-btn-danger:hover {
+  background: #c82333;
+}
+
+/* Direct Media Button Style */
+#ig-direct-media-btn {
+  background: rgba(0, 128, 255, 0.9) !important; /* Blue for direct media */
+}
+
+#ig-direct-media-btn:hover {
+  background: rgba(0, 100, 255, 1) !important;
+  box-shadow: 0 6px 18px rgba(0, 128, 255, 0.5) !important;
 }
 
 /* Animation cho notification */
@@ -49,25 +210,33 @@
   }
 }
 
-/* Modal overlay styles */
-.ig-modal-overlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background: rgba(0, 0, 0, 0.8) !important;
-  z-index: 10000 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+/* Input field styles */
+.ig-modal-content input {
+  width: 100% !important;
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+  border-radius: 4px !important;
+  border: 1px solid #ccc !important;
+  font-size: 14px !important;
 }
 
-.ig-modal-content {
-  background: white !important;
-  padding: 30px !important;
-  border-radius: 15px !important;
-  max-width: 500px !important;
-  text-align: center !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+/* Button styles */
+.ig-modal-content button {
+  padding: 8px 16px !important;
+  margin-right: 10px !important;
+  border-radius: 4px !important;
+  border: none !important;
+  color: white !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+}
+
+.ig-modal-content button:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-2px) !important;
+}
+
+.ig-modal-content button:last-child {
+  margin-right: 0 !important;
 }

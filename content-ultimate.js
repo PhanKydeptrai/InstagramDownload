@@ -59,6 +59,20 @@ class InstagramUltimateDownloader {
     const wrapper = img.closest('div') || img.parentElement;
     if (!wrapper || wrapper.querySelector('.ig-ultimate-btn')) return;
 
+    // Tạo vùng hover phủ toàn bộ ảnh
+    const hoverArea = document.createElement('div');
+    hoverArea.className = 'ig-hover-area';
+    hoverArea.style.cssText = `
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1004 !important;
+      background: transparent !important;
+      cursor: pointer !important;
+    `;
+
     const btn = document.createElement('button');
     btn.className = 'ig-ultimate-btn';
     btn.innerHTML = '💾';
@@ -85,11 +99,13 @@ class InstagramUltimateDownloader {
       font-size: 16px !important;
       cursor: pointer !important;
       z-index: 1005 !important;
-      transition: all 0.2s ease !important;
+      transition: all 0.3s ease !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+      opacity: 0 !important; /* Ẩn nút tải mặc định */
+      pointer-events: auto !important; /* Đảm bảo nút vẫn có thể nhận sự kiện chuột */
     `;
     
     btn.addEventListener('mouseenter', () => {
@@ -102,7 +118,34 @@ class InstagramUltimateDownloader {
       btn.style.background = 'linear-gradient(45deg, #ff6b6b, #ee5a24)';
     });
     
+    wrapper.appendChild(hoverArea);
     wrapper.appendChild(btn);
+    
+    // Thêm sự kiện hover cho cả ảnh và wrapper
+    const showDownloadButton = () => {
+      btn.style.opacity = '1';
+    };
+    
+    const hideDownloadButton = () => {
+      // Kiểm tra xem chuột có đang hover trên nút không
+      if (!btn.matches(':hover')) {
+        btn.style.opacity = '0';
+      }
+    };
+    
+    // Thêm sự kiện cho wrapper và vùng hover
+    wrapper.addEventListener('mouseenter', showDownloadButton);
+    wrapper.addEventListener('mouseleave', hideDownloadButton);
+    hoverArea.addEventListener('mouseenter', showDownloadButton);
+    
+    // Thêm sự kiện trực tiếp cho ảnh
+    img.addEventListener('mouseenter', showDownloadButton);
+    
+    // Đảm bảo nút vẫn hiển thị khi hover trực tiếp lên nút
+    btn.addEventListener('mouseenter', showDownloadButton);
+    
+    // Debug để kiểm tra
+    console.log('🔍 Download button added to image:', img.src.substring(0, 50) + '...');
   }
 
   async downloadWithAllMethods(img, btn) {

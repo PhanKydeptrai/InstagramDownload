@@ -1,4 +1,4 @@
-# � Instagram Ultimate Downloader
+# Instagram Ultimate Downloader
 
 Tiện ích mở rộng Chrome mạnh mẽ để tải xuống hình ảnh từ Instagram với nhiều phương pháp bypass khác nhau.
 

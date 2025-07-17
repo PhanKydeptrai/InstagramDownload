@@ -39,9 +39,59 @@
 
 /* Ultimate Download Button Styles */
 .ig-ultimate-btn {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  background: rgba(0, 123, 255, 0.9) !important; /* Blue for images */
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1003 !important;
   opacity: 0 !important;
-  transition: opacity 0.3s ease, transform 0.2s ease, background 0.2s ease !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
   pointer-events: auto !important;
+}
+
+/* Video Download Button Specific Styles */
+.ig-ultimate-btn[data-media-type="video"] {
+  background: rgba(220, 53, 69, 0.9) !important; /* Red for videos */
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.ig-ultimate-btn[data-media-type="video"]:hover {
+  background: rgba(220, 53, 69, 1) !important;
+  transform: scale(1.15) !important;
+  box-shadow: 0 6px 18px rgba(220, 53, 69, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Image Download Button Hover */
+.ig-ultimate-btn[data-media-type="image"]:hover,
+.ig-ultimate-btn:not([data-media-type]):hover {
+  background: rgba(0, 123, 255, 1) !important;
+  transform: scale(1.15) !important;
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.5) !important;
+}
+
+/* Button States */
+.ig-ultimate-btn:active {
+  transform: scale(0.9) !important;
+}
+
+.ig-ultimate-btn:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+  transform: none !important;
 }
 
 /* Vùng hover mở rộng */
@@ -55,13 +105,93 @@
   pointer-events: auto !important;
 }
 
-/* Hiển thị nút khi hover vào ảnh */
+/* Hiển thị nút khi hover vào ảnh hoặc video */
 div:hover > .ig-ultimate-btn,
 img:hover + .ig-ultimate-btn,
 img:hover ~ .ig-ultimate-btn,
+video:hover + .ig-ultimate-btn,
+video:hover ~ .ig-ultimate-btn,
 .ig-hover-area:hover ~ .ig-ultimate-btn,
 .ig-hover-area:hover + .ig-ultimate-btn {
   opacity: 1 !important;
+}
+
+/* Video-specific hover effects */
+.ig-ultimate-btn[data-media-type="video"]:hover {
+  animation: videoPulse 0.6s ease-in-out !important;
+}
+
+/* Video button pulse animation */
+@keyframes videoPulse {
+  0%, 100% {
+    box-shadow: 0 6px 18px rgba(220, 53, 69, 0.5) !important;
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.8) !important;
+  }
+}
+
+/* Video type specific styling */
+.ig-ultimate-btn[data-video-type="reel"] {
+  background: rgba(138, 43, 226, 0.9) !important; /* Purple for reels */
+}
+
+.ig-ultimate-btn[data-video-type="reel"]:hover {
+  background: rgba(138, 43, 226, 1) !important;
+  box-shadow: 0 6px 18px rgba(138, 43, 226, 0.5) !important;
+}
+
+.ig-ultimate-btn[data-video-type="story"] {
+  background: rgba(255, 165, 0, 0.9) !important; /* Orange for stories */
+}
+
+.ig-ultimate-btn[data-video-type="story"]:hover {
+  background: rgba(255, 165, 0, 1) !important;
+  box-shadow: 0 6px 18px rgba(255, 165, 0, 0.5) !important;
+}
+
+.ig-ultimate-btn[data-video-type="igtv"] {
+  background: rgba(34, 139, 34, 0.9) !important; /* Green for IGTV */
+}
+
+.ig-ultimate-btn[data-video-type="igtv"]:hover {
+  background: rgba(34, 139, 34, 1) !important;
+  box-shadow: 0 6px 18px rgba(34, 139, 34, 0.5) !important;
+}
+
+/* Loading state for video buttons */
+.ig-ultimate-btn[data-media-type="video"]:disabled {
+  background: rgba(108, 117, 125, 0.9) !important;
+  animation: loadingSpinner 1s linear infinite !important;
+}
+
+@keyframes loadingSpinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success state */
+.ig-ultimate-btn.success {
+  background: rgba(40, 167, 69, 0.9) !important;
+  animation: successPulse 0.5s ease-out !important;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Error state */
+.ig-ultimate-btn.error {
+  background: rgba(220, 53, 69, 0.9) !important;
+  animation: errorShake 0.5s ease-out !important;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
 
 /* Animation cho notification */
